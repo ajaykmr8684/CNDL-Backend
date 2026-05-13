@@ -95,23 +95,15 @@ public class AuctionController {
      */
     @GetMapping("/check-ip-access")
     public Map<String, Boolean> checkIpAccess(HttpServletRequest request) {
-        String clientIp = getClientIp(request);
-        System.out.println(clientIp);
-        System.out.println(allowedIp);
-        List<String> allowedIps = Arrays.asList(allowedIp.split(","));
-
         Map<String, Boolean> response = new HashMap<>();
-        response.put("allowed", allowedIps.contains(clientIp));
-
+        response.put("allowed", isIpAllowed(request));
         return response;
     }
 
     @PostMapping("/auction/edit-bid")
     public ResponseEntity<Bid> editHighestBid(@RequestBody Map<String, Object> editInfo, HttpServletRequest request) {
         // Security check: Only allowed IPs can edit bids
-        String clientIp = getClientIp(request);
-        List<String> allowedIps = Arrays.asList(allowedIp.split(","));
-        if (!allowedIps.contains(clientIp)) {
+        if (!isIpAllowed(request)) {
             return ResponseEntity.status(403).build();
         }
 
@@ -132,9 +124,7 @@ public class AuctionController {
     @PostMapping("/auction/re-auction")
     public ResponseEntity<Map<String, Object>> startReAuction(HttpServletRequest request) {
         // Security check: Only allowed IPs can start re-auction
-        String clientIp = getClientIp(request);
-        List<String> allowedIPs = Arrays.asList(allowedIp.split(","));
-        if (!allowedIPs.contains(clientIp)) {
+        if (!isIpAllowed(request)) {
             return ResponseEntity.status(403).build();
         }
 
@@ -143,6 +133,15 @@ public class AuctionController {
             return ResponseEntity.badRequest().body(result);
         }
         return ResponseEntity.ok(result);
+    }
+
+    /**
+     * Returns true if IP auth is disabled (allowedIp == "*") or the client IP is in the allowlist.
+     */
+    private boolean isIpAllowed(HttpServletRequest request) {
+        if ("*".equals(allowedIp.trim())) return true;
+        String clientIp = getClientIp(request);
+        return Arrays.asList(allowedIp.split(",")).contains(clientIp);
     }
 
     /**
@@ -190,9 +189,7 @@ public class AuctionController {
     @GetMapping("/admin/players")
     public ResponseEntity<List<Player>> getAllPlayersForManagement(HttpServletRequest request) {
         // Security check: Only allowed IPs can access player management
-        String clientIp = getClientIp(request);
-        List<String> allowedIps = Arrays.asList(allowedIp.split(","));
-        if (!allowedIps.contains(clientIp)) {
+        if (!isIpAllowed(request)) {
             return ResponseEntity.status(403).build();
         }
 
@@ -210,9 +207,7 @@ public class AuctionController {
             HttpServletRequest request) {
 
         // Security check: Only allowed IPs can update players
-        String clientIp = getClientIp(request);
-        List<String> allowedIps = Arrays.asList(allowedIp.split(","));
-        if (!allowedIps.contains(clientIp)) {
+        if (!isIpAllowed(request)) {
             return ResponseEntity.status(403).build();
         }
 
