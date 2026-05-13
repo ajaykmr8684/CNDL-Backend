@@ -41,6 +41,12 @@ public class IpAddressFilter extends OncePerRequestFilter {
 
         // Only apply IP restriction to bid and sold endpoints
         if (path.contains("/api/auction/bid") || path.contains("/api/auction/sold")) {
+            // Wildcard disables IP filtering entirely
+            if ("*".equals(allowedIp.trim())) {
+                filterChain.doFilter(request, response);
+                return;
+            }
+
             List<String> allowedIps = getAllowedIps();
 
             // If no allowed IPs are configured, deny access to protected endpoints
