@@ -41,19 +41,14 @@ public class SecurityConfig {
                 .cors().and()
                 .csrf().disable()
                 .authorizeRequests()
-                // You can uncomment and adjust these if you need role-based auth in addition to IP filtering
-                // .antMatchers("/api/auction/bid").authenticated()
-                // .antMatchers("/api/auction/sold", "/api/auction/unsold").hasRole("ADMIN")
-                .antMatchers("/api/auction/bid", "/api/auction/sold").permitAll() // We'll control access via IP filter
+                .antMatchers("/api/auction/bid", "/api/auction/sold").permitAll()
                 .antMatchers("/api/**", "/ws/**").permitAll()
                 .anyRequest().permitAll()
-                .and()
-                .httpBasic()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .addFilterBefore(ipAddressFilter, FilterSecurityInterceptor.class); // Add our custom IP filter
+                .addFilterBefore(ipAddressFilter, FilterSecurityInterceptor.class);
 
         return http.build();
     }
