@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Dracarys Queens",
+    "owners": [
+      { "id": 1, "name": "Rohit Maruthi", "username": "Rohit", "password": "password" }
+    ],
+    "walletBalance": 400000000,
+    "players": []
+  },
+  {
+    "id": 2,
+    "name": "Agile Strikers",
+    "owners": [
+      { "id": 2, "name": "Deepak Perumalla", "username": "Deepak", "password": "password" }
+    ],
+    "walletBalance": 400000000,
+    "players": []
+  },
+  {
+    "id": 3,
+    "name": " Platform Strikers",
+    "owners": [
+      { "id": 3, "name": "Hemantha", "username": "Hemantha", "password": "password" }
+    ],
+    "walletBalance": 400000000,
+    "players": []
+  },
+  {
+    "id": 4,
+    "name": "Slay Swingers",
+    "owners": [
+      { "id": 4, "name": "Ganga/Tapash", "username": "ganga", "password": "password" }
+    ],
+    "walletBalance": 400000000,
+    "players": []
+  }
+]
