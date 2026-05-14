@@ -990,5 +990,37 @@
     "soldToTeamId": null,
     "soldAmount": null,
     "auctionSlot": 1
+  },
+  {
+    "id": 63,
+    "name": "Abhishek",
+    "photoUrl": "/images/players/63.jpg",
+    "playerType": "All-rounder",
+    "tier": "Tier-1",
+    "lastYearTeam": "",
+    "lastYearRanking": "",
+    "runs": 0,
+    "battingStat": "Right-Handed",
+    "bowlingStat": "Right-Arm-Medium",
+    "sold": false,
+    "soldToTeamId": null,
+    "soldAmount": null,
+    "auctionSlot": 1
+  },
+  {
+    "id": 64,
+    "name": "Siva",
+    "photoUrl": "/images/players/64.jpg",
+    "playerType": "Batsman",
+    "tier": "Tier-2",
+    "lastYearTeam": "",
+    "lastYearRanking": "",
+    "runs": 0,
+    "battingStat": "Right-Handed",
+    "bowlingStat": "",
+    "sold": false,
+    "soldToTeamId": null,
+    "soldAmount": null,
+    "auctionSlot": 1
   }
 ]
