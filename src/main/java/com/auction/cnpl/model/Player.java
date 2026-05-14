@@ -59,13 +59,13 @@ public class Player {
     public Integer getBasePrice() {
         switch (tier) {
             case "Marque":
-                return 20000000; // 2,00,00,000
+                return 500000; // 2,00,00,000
             case "Tier-1":
-                return 10000000; // 1,00,00,000
+                return 300000; // 1,00,00,000
             case "Tier-2":
-                return 5000000;  // 50,00,000
+                return 100000;  // 50,00,000
             default:
-                return 5000000;  // Default to Tier-2 if not specified
+                return 100000;  // Default to Tier-2 if not specified
         }
     }
 
@@ -73,13 +73,13 @@ public class Player {
     public Integer getStepUpAmount() {
         switch (tier) {
             case "Marque":
-                return 2000000;  // 20,00,000
+                return 20000;  // 20,00,000
             case "Tier-1":
-                return 500000;   // 5,00,000
+                return 10000;   // 5,00,000
             case "Tier-2":
-                return 300000;   // 3,00,000
+                return 5000;   // 3,00,000
             default:
-                return 2000000;   // Default to Tier-2 if not specified
+                return 5000;   // Default to Tier-2 if not specified
         }
     }
 
