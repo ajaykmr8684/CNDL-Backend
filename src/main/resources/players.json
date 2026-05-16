@@ -219,8 +219,8 @@
     "battingStat": "Right-Handed",
     "bowlingStat": "NA",
     "sold": false,
-    "soldToTeamId": null,
-    "soldAmount": null,
+    "soldToTeamId": 4,
+    "soldAmount": 0,
     "auctionSlot": 1
   },
   {
@@ -315,8 +315,8 @@
     "battingStat": "Right-Handed",
     "bowlingStat": "Right-Arm-Medium",
     "sold": false,
-    "soldToTeamId": null,
-    "soldAmount": null,
+    "soldToTeamId": 2,
+    "soldAmount": 0,
     "auctionSlot": 1
   },
   {
@@ -507,8 +507,8 @@
     "battingStat": "Right-Handed",
     "bowlingStat": "Right-Arm-Medium",
     "sold": false,
-    "soldToTeamId": null,
-    "soldAmount": null,
+    "soldToTeamId": 1,
+    "soldAmount": 0,
     "auctionSlot": 1
   },
   {
@@ -907,8 +907,8 @@
     "battingStat": "Right-Handed",
     "bowlingStat": "Right-Arm-Off-spin",
     "sold": false,
-    "soldToTeamId": null,
-    "soldAmount": null,
+    "soldToTeamId": 3,
+    "soldAmount": 0,
     "auctionSlot": 1
   },
   {
